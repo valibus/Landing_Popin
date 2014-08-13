@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin translate="title" module="compar">
+                <children>
+        			<system>
+        				<children>
+        					<config>
+        						<children>
+        							<landing>
+        								<title>Valib.us :: landing page</title>
+        							</landing>
+        						</children>
+        					</config>
+        				</children>
+        			</system>
+    			</children>
+    		</admin>
+    	</resources>
+    </acl>
+</config>

@@ -1,0 +1,33 @@
+<config>
+    <modules>
+        <Valibus_Landing>
+            <version>0.5</version>
+        </Valibus_Landing>
+    </modules>
+    <global>
+        <blocks>
+            <landing>
+                <class>Valibus_Landing_Block</class>
+            </landing>
+        </blocks>
+        <helpers>
+            <landing>
+                <class>Valibus_Landing_Helper</class>
+            </landing>
+        </helpers>
+        <models>
+            <valibus_landing>
+                <class>Valibus_Landing_Model</class>
+            </valibus_landing>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <valibus_landing>
+                    <file>valibus/landing.xml</file>
+                </valibus_landing>
+            </updates>
+        </layout>
+    </frontend>
+</config>
