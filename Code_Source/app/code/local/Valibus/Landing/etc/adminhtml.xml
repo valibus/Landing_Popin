@@ -2,7 +2,7 @@
 <config>
     <acl>
         <resources>
-            <admin translate="title" module="compar">
+            <admin translate="title" module="valibus_landing">
                 <children>
         			<system>
         				<children>

@@ -6,14 +6,14 @@
     </modules>
     <global>
         <blocks>
-            <landing>
+            <valibus_landing>
                 <class>Valibus_Landing_Block</class>
-            </landing>
+            </valibus_landing>
         </blocks>
         <helpers>
-            <landing>
+            <valibus_landing>
                 <class>Valibus_Landing_Helper</class>
-            </landing>
+            </valibus_landing>
         </helpers>
         <models>
             <valibus_landing>
