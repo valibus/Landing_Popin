@@ -34,8 +34,8 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
     public function startCookie()
     {
         $cookie = Mage::getModel('core/cookie');
-        $value = time() . '.0';
-        $cookie->set(self::COOKIE_NAME, $value, Mage::helper('landing')->getRepeatDelay());
+        $value = time() . ';'.'0';
+        $cookie->set(self::COOKIE_NAME, $value, Mage::helper('valibus_landing/data')->getRepeatDelay());
         return $cookie;
     }
 
@@ -43,7 +43,7 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
     {
         $infos = $this->readCookie();
         $cookie = Mage::getModel('core/cookie');
-        $value = $infos[0] . '.1';
+        $value = $infos[0] . ';'.'1';
         $cookie->set(self::COOKIE_NAME, $value, Mage::helper('landing')->getRepeatDelay());
         return $cookie;
     }
@@ -52,7 +52,7 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
     {
         $landingCookie = Mage::getModel('core/cookie');
         if ($landingCookie->get(self::COOKIE_NAME)) {
-            $landingInfos = explode('.', $landingCookie->get(self::COOKIE_NAME));
+            $landingInfos = explode(';', $landingCookie->get(self::COOKIE_NAME));
         } else {
             return false;
         }

@@ -33,9 +33,9 @@ class Valibus_Landing_Helper_Data extends Mage_Core_Helper_Abstract{
     public function getRepeatDelay(){
         $value=Mage::getStoreConfig('landing/time/repeatdelay');
         if ($value>0)
-            return $value;
+            return $value*24*60*60;
         else
-            return 15;
+            return $value*24*60*60;
     }
 
     private function getSetupedContent($contentType="static"){
