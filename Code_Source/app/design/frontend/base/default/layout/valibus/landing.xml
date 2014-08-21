@@ -5,7 +5,7 @@
             <action method="addCss"><name>css/popin.css</name></action>
         </reference>
         <reference name="content">
-            <block type="landing/popin" name="popin" as="popin" template="landing/popin.phtml" />
+            <block type="valibus_landing/popin" name="popin" as="popin" template="valibus/landing/popin.phtml" />
         </reference>
     </default>
 </layout>

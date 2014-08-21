@@ -3,7 +3,6 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
 {
     const COOKIE_NAME = 'landing';
 
-
     //test if we show the popin (and the HTML & JS source code also)
     public function canShow()
     {
@@ -14,10 +13,10 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
             $cookieSetOn = $cookieLanding[0];
             $cookieDisplay = $cookieLanding[1];
             //on test si il n'est expiré
-            if (Mage::helper('landing')->getShowAgain($cookieSetOn)) {
+            if (Mage::helper('valibus_landing')->getShowAgain($cookieSetOn)) {
                 $this->startCookie();
                 return true;
-            } elseif (Mage::helper('landing')->getShowFirst($cookieSetOn, $cookieDisplay)) {
+            } elseif (Mage::helper('valibus_landing')->getShowFirst($cookieSetOn, $cookieDisplay)) {
                 $this->updateCookie();
                 return true;
             } else {
@@ -34,8 +33,8 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
     public function startCookie()
     {
         $cookie = Mage::getModel('core/cookie');
-        $value = time() . ';'.'0';
-        $cookie->set(self::COOKIE_NAME, $value, Mage::helper('valibus_landing/data')->getRepeatDelay());
+        $value = time() . '.'.'0';
+        $cookie->set(self::COOKIE_NAME, $value, Mage::helper('valibus_landing')->getRepeatDelay());
         return $cookie;
     }
 
@@ -43,8 +42,8 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
     {
         $infos = $this->readCookie();
         $cookie = Mage::getModel('core/cookie');
-        $value = $infos[0] . ';'.'1';
-        $cookie->set(self::COOKIE_NAME, $value, Mage::helper('landing')->getRepeatDelay());
+        $value = $infos[0] . '.'.'1';
+        $cookie->set(self::COOKIE_NAME, $value, Mage::helper('valibus_landing')->getRepeatDelay());
         return $cookie;
     }
 
@@ -52,7 +51,7 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
     {
         $landingCookie = Mage::getModel('core/cookie');
         if ($landingCookie->get(self::COOKIE_NAME)) {
-            $landingInfos = explode(';', $landingCookie->get(self::COOKIE_NAME));
+            $landingInfos = explode('.', $landingCookie->get(self::COOKIE_NAME));
         } else {
             return false;
         }

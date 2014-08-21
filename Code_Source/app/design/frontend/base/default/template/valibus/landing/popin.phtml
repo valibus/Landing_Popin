@@ -3,6 +3,7 @@
  * @see Valibus_Landing_Block_Popin
  */
 ?>
+
 <?php if ($this->canShow()): ?>
     <script type="text/javascript">
         //<![CDATA[
@@ -75,50 +76,9 @@
         <!-- Contenu popin -->
         <div class="message-popup-content">
             <div class="social-plugin">
-                <div id="fb-root"></div>
-                <script>(function(d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s); js.id = id;
-                        js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
-                <div class="fb-follow" data-href="https://www.facebook.com/valibusseo" data-show-faces="true" data-width="350"></div>
-                <br />
-            </div>
-            <div class="message social-plugin">
-                <!-- Contenu de la zone -->
-                <a href="https://twitter.com/PatrickValibus" class="twitter-follow-button" data-show-count="true"
-                   data-lang="fr" data-size="large">Follow @Patrickvalibus</a>
-                <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = "//platform.twitter.com/widgets.js";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, "script", "twitter-wjs");</script>
+
             </div>
 
-            <div class="social-plugin"><!-- Placez cette balise où vous souhaitez faire apparaître le gadget badge. -->
-                <div class="g-plus" data-height="69" data-href="//plus.google.com/114790663510802931185"
-                     data-rel="author"></div>
-
-                <!-- Placez cette ballise après la dernière balise badge. -->
-                <script type="text/javascript">
-                    window.___gcfg = {lang:'fr'};
-
-                    (function () {
-                        var po = document.createElement('script');
-                        po.type = 'text/javascript';
-                        po.async = true;
-                        po.src = 'https://apis.google.com/js/plusone.js';
-                        var s = document.getElementsByTagName('script')[0];
-                        s.parentNode.insertBefore(po, s);
-                    })();
-                </script>
-            </div>
         </div>
         <!-- Fin de la zone -->
     </div>

@@ -26,21 +26,54 @@ class Valibus_Landing_Helper_Data extends Mage_Core_Helper_Abstract{
         else
             return 10;
     }
+
     /**
-     * @return mixed
-     * @description Indicate the time before the second display
+     * @return int
+     * @description return in second the number of days before 2nd display
      */
     public function getRepeatDelay(){
         $value=Mage::getStoreConfig('landing/time/repeatdelay');
         if ($value>0)
-            return $value*24*60*60;
+            $timeRepeat=$value;
         else
-            return $value*24*60*60;
+            $timeRepeat=15;
+        //convert delay in second
+        return $timeRepeat*24*60*60;
+    }
+
+    /**
+     * @param $timeFirst
+     * @return bool
+     * @description check if popin can be showed again
+     */
+    public function getShowAgain($timeFirst){
+        $diff=time()-$timeFirst;
+        if($diff>$this->getRepeatDelay())
+            return true;
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * @param $timeFirst
+     * @param $status
+     * @return bool
+     * @description check if popin can be showed for the first time (if it as not be shown before and if the minimum delay is ok
+     */
+    public function getShowFirst($timeFirst,$status){
+        $diff=time()-$timeFirst;
+        if($diff>$this->getTimeBefore() && $status==0){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     private function getSetupedContent($contentType="static"){
         if($contentType=='static'){
             $blockId=Mage::getStoreConfig('landing/content/cmsblock');
+            //test if a block is set in static display
             if($blockId==0)
                 return $this->__('Please setup any cms block to display in System/configuration/valib.us landing /content');
             else
@@ -58,6 +91,7 @@ class Valibus_Landing_Helper_Data extends Mage_Core_Helper_Abstract{
             if(Mage::getStoreConfig('landing/content/twitteractivated')==1)
                 $blockContent['twitter']=Mage::getStoreConfig('landing/content/twittercontent');
 
+            //test if a content is set in social configuration
             if(isset($blockContent))
                 return $blockContent;
             else
