@@ -22,6 +22,15 @@
         </models>
     </global>
     <frontend>
+        <translate>
+            <modules>
+                <Valibus_Landing>
+                    <files>
+                        <default>Valibus_Landing.csv</default>
+                    </files>
+                </Valibus_Landing>
+            </modules>
+        </translate>
         <layout>
             <updates>
                 <valibus_landing>
@@ -30,4 +39,15 @@
             </updates>
         </layout>
     </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Valibus_Landing>
+                    <files>
+                        <default>Valibus_Landing.csv</default>
+                    </files>
+                </Valibus_Landing>
+            </modules>
+        </translate>
+    </adminhtml>
 </config>

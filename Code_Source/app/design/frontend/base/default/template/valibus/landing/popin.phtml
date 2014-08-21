@@ -1,10 +1,11 @@
 <?php
 /**
  * @see Valibus_Landing_Block_Popin
+ * @var $this Valibus_Landing_Block_Popin
  */
 ?>
 
-<?php if ($this->canShow()): ?>
+<?php //if ($this->canShow()): ?>
     <script type="text/javascript">
         //<![CDATA[
         var messagePopupClosed = false;
@@ -69,19 +70,27 @@
         <!-- ligne d'en tete, titre + bouton fermeture -->
         <div class="message-popup-head">
             <a href="#" onclick="closeMessagePopup(); return false;"
-               title="<?php echo $this->getPopinCloseText(); ?>"><span>X</span></a>
+               title="<?php echo $this->__('Close the social ask.'); ?>"><span>X</span></a>
 
-            <h2><?php echo $this->getPopinTitle(); ?></h2>
+            <h2><?php echo $this->__('Stay tunned : Get social connected !'); ?></h2>
         </div>
         <!-- Contenu popin -->
         <div class="message-popup-content">
-            <div class="social-plugin">
-
-            </div>
-
+            <?php
+            $linesToDisplay=$this->getContent();
+            foreach($linesToDisplay as $key => $line){
+                if ($key=="error"){
+                    die ("error".$line);
+                }elseif($key=="static"){
+                    echo $line;
+                }else{
+                    echo '<div class="social-plugin">'.$line.'</div>';
+                }
+            }
+            ?>
         </div>
         <!-- Fin de la zone -->
     </div>
 
     <!--FIN ZONE POPIN -->
-<?php endif; ?>
+<?php //endif; ?>

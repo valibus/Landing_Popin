@@ -57,4 +57,8 @@ class Valibus_Landing_Block_Popin extends Mage_Core_Block_Template
         }
         return $landingInfos;
     }
+    public function getContent()
+    {
+        return Mage::helper('valibus_landing')->getDisplayContent();
+    }
 }

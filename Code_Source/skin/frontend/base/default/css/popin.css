@@ -12,7 +12,9 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /*IE8*/
 }
 .social-plugin{
-height: 70px;
+min-height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
     vertical-align: middle;
     background-color: #FFF;
@@ -29,7 +31,7 @@ height: 70px;
 }
 
 .message-popup.show {
-    top: 280px;
+    top: 100px;
 }
 
 .message-popup .message-popup-head {

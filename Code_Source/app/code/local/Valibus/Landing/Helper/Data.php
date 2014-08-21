@@ -75,9 +75,9 @@ class Valibus_Landing_Helper_Data extends Mage_Core_Helper_Abstract{
             $blockId=Mage::getStoreConfig('landing/content/cmsblock');
             //test if a block is set in static display
             if($blockId==0)
-                return $this->__('Please setup any cms block to display in System/configuration/valib.us landing /content');
+                $blockContent['error']=$this->__('Please setup any cms block to display in System/configuration/valib.us landing /content');
             else
-                return Mage::getModel('cms/block')->load($blockId)->getContent();
+                $blockContent['Static']=Mage::getModel('cms/block')->load($blockId)->getContent();
         }
         elseif($contentType=='dynamic')
         {
@@ -92,11 +92,10 @@ class Valibus_Landing_Helper_Data extends Mage_Core_Helper_Abstract{
                 $blockContent['twitter']=Mage::getStoreConfig('landing/content/twittercontent');
 
             //test if a content is set in social configuration
-            if(isset($blockContent))
-                return $blockContent;
-            else
-                return $this->__('Please setup any social networks content to display in System/configuration/valib.us landing /content');
+            if(!isset($blockContent))
+                $blockContent['error']=$this->__('Please setup any social networks content to display in System/configuration/valib.us landing /content');
         }
+        return $blockContent;
     }
     public function getDisplayContent(){
         return $this->getSetupedContent($this->getDisplayOrigin());
