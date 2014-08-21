@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Valibus_Landing>
+            <active>True</active>
+            <codePool>local</codePool>
+        </Valibus_Landing>
+    </modules>
+</config>

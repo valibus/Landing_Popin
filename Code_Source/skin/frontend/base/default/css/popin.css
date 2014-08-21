@@ -1,0 +1,98 @@
+#message-popup-window-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 980;
+    background-color: #efefef;
+    opacity: .5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /*IE8*/
+}
+.social-plugin{
+min-height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #FFF;
+}
+.message-popup {
+    position: absolute;
+    z-index: 990;
+    width: 407px;
+    top: -9999em;
+    left: 50%;
+    margin: 0 0 0 -203px;
+    background: #444;
+    padding: 0 4px 4px;
+}
+
+.message-popup.show {
+    top: 100px;
+}
+
+.message-popup .message-popup-head {
+    padding: 1px 0;
+}
+
+.message-popup .message-popup-head h2 {
+    padding: 0 10px;
+    margin: 0;
+    font: bold 17px Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.message-popup .message-popup-head a {
+    float: right;
+    border: 1px solid #444;
+    padding: 0 12px 0 7px;
+    font: normal 17px Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.message-popup .message-popup-head a span {
+    float: left;
+    padding-left: 19px;
+}
+
+.message-popup .message-popup-content {
+    background: #444;
+    padding: 21px 21px 10px;
+    text-align: center;
+}
+
+.message-popup .message-popup-content .message-icon {
+    float: left;
+    width: 50px;
+    padding: 47px 0 0;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+}
+
+.message-popup .message-popup-content .message-text {
+    float: right;
+    width: 380px;
+    min-height: 4.5em;
+    overflow: hidden;
+    color: #644f3b;
+}
+
+.message-popup .message-popup-content .read-more {
+    margin: 7px 0 0;
+    text-align: right;
+}
+
+.message-popup .message-popup-content .read-more a {;
+    padding-left: 14px;
+    text-decoration: underline;
+}

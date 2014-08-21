@@ -1,0 +1,11 @@
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addJs"><script>prototype/window.js</script></action>
+            <action method="addCss"><name>css/popin.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="valibus_landing/popin" name="popin" as="popin" template="valibus/landing/popin.phtml" />
+        </reference>
+    </default>
+</layout>
